@@ -80,6 +80,7 @@ type tasks = {
 };
 const Table = () => {
   const [columns, setColumns] = useState<tasks>(data);
+  const [left, setLeft] = useState(0);
 
   const createIssue = () => {
     let newIssue: taskType = {
@@ -95,15 +96,17 @@ const Table = () => {
       },
     }));
   };
-  const moveTaskToAnotherColumn = (coords: number[]) => {
+  const moveTaskToAnotherColumn = (coords: number) => {
     console.log(coords);
-    console.log(document.querySelectorAll(".column"));
+    if (coords) {
+      setLeft(left);
+    }
   };
 
   return (
     <div className={styles.board}>
       {Object.values(columns).map((col, index) => (
-        <Column key={col.title} title={col.title}>
+        <Column left={left} key={col.title} title={col.title}>
           {col.tasks.map((task) => (
             <Task task={task} moveTask={moveTaskToAnotherColumn}></Task>
           ))}

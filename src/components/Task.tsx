@@ -53,7 +53,7 @@ const Task: React.FC<{ task: taskType; moveTask: PropFunction }> = ({
   };
   const handleMouseUp = () => {
     if (pressed) {
-      moveTask(coords);
+      moveTask(coords[0]);
     }
     setCurrentPosition("relative");
     setPressed(false);
