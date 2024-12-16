@@ -1,0 +1,31 @@
+.board {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+.column {
+  background-color: whitesmoke;
+  flex: 1;
+  border-radius: 20px;
+  overflow: auto;
+  position: relative;
+}
+.column::-webkit-scrollbar {
+  display: none;
+}
+.columnHeader {
+  padding: 16px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  background-color: whitesmoke;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.columnContent {
+  padding: 16px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
